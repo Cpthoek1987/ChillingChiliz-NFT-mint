@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 20% 3%;
+    --foreground: 0 0% 98%;
+    --card: 240 19% 4%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 19% 4%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 142 71% 45%;
+    --primary-foreground: 144 100% 97%;
+    --secondary: 240 19% 8%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 19% 8%;
+    --muted-foreground: 240 5% 84%;
+    --accent: 142 71% 45%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 19% 10%;
+    --input: 240 19% 10%;
+    --ring: 142 71% 45%;
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image: 
+      radial-gradient(circle at center, rgba(var(--primary), 0.15), transparent 40%),
+      radial-gradient(circle at 25% 25%, rgba(var(--primary), 0.05), transparent 30%),
+      radial-gradient(circle at 75% 75%, rgba(var(--primary), 0.05), transparent 30%);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
